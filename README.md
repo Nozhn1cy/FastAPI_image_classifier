@@ -27,17 +27,29 @@ y = requests.post(url, data=json.dumps(data), headers={'Content-Type': 'applicat
 ``` bash
 {"top_classes":["borzoi","Saluki"],"top_probs":[0.98,0.0]}
 ``` 
-* Классификация изображения непосредственно с главной страницы браузера.
+* Классификация изображения непосредственно с главной страницы в браузере.
 
 ## Requirements
 Python 3.9+
 
 ## Installation
-описание как запустить git clone + docker compose up
+Скопировать репозиторий в папку *name_dir*
+```bash
+git clone https://github.com/Nozhn1cy/FastAPI_image_classifier name_dir
+```
+Перейти в папку *name_dir* и установить библиотеки
+```bash
+pip install -r requirements.txt
+```
 
 ## Run it
-1. Выполнить команду в терминале:
+1. Перейти в папку *app* и выполнить команду в терминале:
 ```bash
-uvicorn main:app
+uvicorn main:app --host 0.0.0.0 --port 8000
 ```
 2. Перейти в браузере http://localhost:8000/.
+
+Также сервер можно запустить из папки *name_dir* с помощью команды
+```bash
+docker compose up
+```
